@@ -1,0 +1,14 @@
+# default is null, do not use ssh/ssl
+ssh_ssl:
+  host: '101.133.128.155'
+  name: 'root'
+  pwd: 'Ocote@123'
+# hive config
+hive_url: 'jdbc:hive2://localhost:10000;'
+# hadoop config
+hadoop_url:
+  name:
+  pwd:
+nameNode: 'hadoop014'
+nodeManager: 'hadoop014,hadoop013,hadoop012，hadoop011' # get from $HADOOP_HOME/etc/hadoop/slaves
+hive.metastore.warehouse.dir: /home/hive/warehouse

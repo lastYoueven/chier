@@ -5,9 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="036fcc46-87f7-453e-8ac5-4fc85baab547" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/config/MapToHbase.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/_version_" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/chier/chierool/GetConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/chier/chierool/SshSshCon.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/chier/pipen/PipenStream.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/chier/slave/BaseConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/chier/slave/TaskManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/chier/slave/TaskNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/chier/slave/Translater.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/chier/stateManage/StateWatch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../batchEtl/src/main/java/com/longna/GetConfInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../batchEtl/src/main/java/com/longna/GetConfInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../batchEtl/src/main/java/com/longna/LogFileWatcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/../batchEtl/src/main/java/com/longna/LogFileWatcher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../batchEtl/src/main/java/com/longna/initRedis.java" beforeDir="false" afterPath="$PROJECT_DIR$/../batchEtl/src/main/java/com/longna/initRedis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/chier-env.sh" beforeDir="false" afterPath="$PROJECT_DIR$/bin/chier-env.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/hdfsConf.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/hdfsConf.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chier/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chier/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chier/chierool/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chier/chierool/test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +42,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -39,25 +56,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
-    &quot;last_opened_file_path&quot;: &quot;G:/datawarehouse/chier/config&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "jdk.selected.JAVA_MODULE": "1.8",
+    "last_opened_file_path": "G:/datawarehouse/chier/config",
+    "project.structure.last.edited": "模块",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "android.live.literals"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="G:\datawarehouse\chier\config" />
+      <recent name="G:\datawarehouse\chier\dir" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="G:\datawarehouse\chier" />
     </key>
   </component>
-  <component name="RunManager" selected="Maven.chier [clean,install]">
+  <component name="RunManager" selected="应用程序.GetConfig">
+    <configuration name="GetConfig" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.chier.chierool.GetConfig" />
+      <module name="chier" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.chier.chierool.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.chier.Main" />
       <module name="chier" />
@@ -99,10 +133,12 @@
     </configuration>
     <list>
       <item itemvalue="Maven.chier [clean,install]" />
+      <item itemvalue="应用程序.GetConfig" />
       <item itemvalue="应用程序.Main" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.GetConfig" />
         <item itemvalue="应用程序.Main" />
       </list>
     </recent_temporary>
@@ -128,5 +164,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/chier/chierool/GetConfig.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

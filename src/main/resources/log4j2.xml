@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="error">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d %-5p (%F:%L) - %m%n" />
+        </Console>
+    </Appenders>
+
+    <Loggers>
+        <logger name="chier" level="info" includeLocation="true" additivity="false">
+            <appender-ref ref="Console"/>
+        </logger>
+
+        <root level="info" includeLocation="true">
+            <appender-ref ref="Console"/>
+        </root>
+    </Loggers>
+</Configuration>

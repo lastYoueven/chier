@@ -1,6 +1,7 @@
 > CHIER is SQL sink data beteew hive and hbase, quay the data with sql;
 
 ## Features
-
-> - select data with sql from hive to hbase 
-> - ETL data from hive to hbase 
+> - Get data from hdfs deal to hbase with hive table info.
+![alone node](dir/workStream.png) one node stream
+> - High availability m/s
+![](dir/HAMode.png)

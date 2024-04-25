@@ -4,4 +4,6 @@ ssh/ssl:
   username:
   password:
 # hive config
-url:
+hive_url:
+# hadoop config
+hadoop_url:
