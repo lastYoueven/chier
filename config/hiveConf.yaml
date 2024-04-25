@@ -1,0 +1,7 @@
+# default is null, do not use ssh/ssl
+ssh/ssl:
+  host: '101.133.128.155'
+  username: 'root'
+  password: 'Ocote@123'
+# hive config
+url: 'jdbc:hive2://localhost:10000;'

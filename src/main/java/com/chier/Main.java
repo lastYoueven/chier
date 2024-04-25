@@ -1,6 +1,6 @@
-package org.example;
+package com.chier;
 
-import static org.example.chierool.test.getDataFromHive;
+import static com.chier.chierool.test.getDataFromHive;
 
 public class Main {
     public static void main(String[] args) {
