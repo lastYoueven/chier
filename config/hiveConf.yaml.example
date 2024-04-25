@@ -1,0 +1,7 @@
+# default is null, do not use ssh/ssl
+ssh/ssl:
+  host:
+  username:
+  password:
+# hive config
+url:

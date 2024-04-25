@@ -3,43 +3,75 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.example</groupId>
+    <groupId>com.chier</groupId>
     <artifactId>chier</artifactId>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
     <version>1.0-SNAPSHOT</version>
+
     <dependencies>
         <dependency>
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-core_2.12</artifactId>
-            <version>3.3.2</version>
+            <version>3.1.1</version>
         </dependency>
         <dependency>
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-sql_2.12</artifactId>
-            <version>3.3.2</version>
+            <version>3.1.1</version>
+        </dependency>
+
+        <!-- Hive 依赖 -->
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-client</artifactId>
+            <version>3.2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.hive</groupId>
+            <artifactId>hive-exec</artifactId>
+            <version>3.1.2</version>
         </dependency>
     </dependencies>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
     <build>
-        <finalName>jarTest</finalName>
+        <finalName>javaTest</finalName>
         <plugins>
+            <!-- Maven 打包插件配置 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <!-- 指定主类 -->
+                    <archive>
+                        <manifest>
+                            <mainClass>com.chier.Main</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+
             <!-- Maven Assembly 插件配置 -->
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>3.3.0</version>
                 <configuration>
                     <descriptorRefs>
+                        <!-- 使用 jar-with-dependencies 描述符 -->
                         <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>
                     <archive>
+                        <!-- 指定生成的 JAR 文件的 MANIFEST.MF -->
                         <manifest>
-                            <mainClass>Main</mainClass>
+                            <mainClass>com.chier.Main</mainClass>
                         </manifest>
                     </archive>
-                    <outputDirectory>${project.basedir}</outputDirectory>
-                    <finalName>${project.artifactId}-${project.version}</finalName>
+<!--                    <finalName>${project.artifactId}-${project.version}-jar-with-dependencies</finalName>-->
                 </configuration>
                 <executions>
                     <execution>
