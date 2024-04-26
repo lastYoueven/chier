@@ -5,26 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="036fcc46-87f7-453e-8ac5-4fc85baab547" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/config/MapToHbase.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/_version_" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chier/chierool/GetConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chier/chierool/SshSshCon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chier/pipen/PipenStream.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chier/slave/BaseConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chier/slave/TaskManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chier/slave/TaskNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chier/slave/Translater.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chier/stateManage/StateWatch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../batchEtl/src/main/java/com/longna/GetConfInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../batchEtl/src/main/java/com/longna/GetConfInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../batchEtl/src/main/java/com/longna/LogFileWatcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/../batchEtl/src/main/java/com/longna/LogFileWatcher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../batchEtl/src/main/java/com/longna/initRedis.java" beforeDir="false" afterPath="$PROJECT_DIR$/../batchEtl/src/main/java/com/longna/initRedis.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/chier-env.sh" beforeDir="false" afterPath="$PROJECT_DIR$/bin/chier-env.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/hdfsConf.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/hdfsConf.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chier/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chier/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chier/chierool/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chier/chierool/test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
