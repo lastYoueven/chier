@@ -2,17 +2,23 @@
 <Configuration status="error">
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d %-5p (%F:%L) - %m%n" />
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
         </Console>
+        <File name="com.chier.chierool" fileName="logs/app.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+        </File>
     </Appenders>
-
     <Loggers>
-        <logger name="chier" level="info" includeLocation="true" additivity="false">
-            <appender-ref ref="Console"/>
-        </logger>
-
-        <root level="info" includeLocation="true">
-            <appender-ref ref="Console"/>
-        </root>
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="File"/>
+        </Root>
+        <Logger name="com.chier.chierool" level="info" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="File"/>
+        </Logger>
     </Loggers>
 </Configuration>

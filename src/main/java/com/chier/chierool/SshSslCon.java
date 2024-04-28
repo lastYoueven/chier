@@ -4,7 +4,7 @@ package com.chier.chierool;
  * @author lmdm
  * protive the SSH SSL conntion
  */
-public class SshSshCon {
+public class SshSslCon {
 
     public void conntionJsch(){
 //        JSch jsch = new JSch();

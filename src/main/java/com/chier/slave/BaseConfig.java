@@ -3,6 +3,8 @@ package com.chier.slave;
 import javax.annotation.Nullable;
 import java.io.Serializable;
 
+import static com.chier.chierool.GetConfig.reCoverConfig;
+
 /**
  * @author lmdm
  * dataSource config './config/*.yaml' info ,check base info and format the object;
@@ -66,6 +68,7 @@ public class BaseConfig implements Serializable {
         this.SSH_PWD = pwd;
         this.NAME_NODES = nameNode;
         this.NODE_MANAGERS = nodeManager;
+
     }
 
     public String getHdfsPath() {
