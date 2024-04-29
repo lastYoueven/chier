@@ -5,20 +5,18 @@ import org.yaml.snakeyaml.DumperOptions;
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.*;
+import java.util.Base64;
 import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static com.chier.chierool.ReCoverConf.*;
-
 
 /**
  * @author lmdm
  */
-public class GetConfig implements Serializable {
+public class GetConfig extends ReCoverConf implements Serializable {
     private static final Logger LOG = LoggerFactory.getLogger(GetConfig.class);
-    private static File file;
     private static BaseConfig HdfsConfig = null;
 
     /**
@@ -31,7 +29,7 @@ public class GetConfig implements Serializable {
             File[] files = directory.listFiles((dir, name) -> name.toLowerCase().endsWith(".yaml"));
             if (files != null) {
                 for (File file : files) {
-                    System.out.println("get config files : " + file.getName());
+                    LOG.info("get config files : " + file.getName());
                     InputStream inputStream = new FileInputStream(file);
                     Yaml yaml = new Yaml();
                     Map<String, Object> confInfo = yaml.load(inputStream);
@@ -41,22 +39,22 @@ public class GetConfig implements Serializable {
                     inputStream.close();
                 }
             } else {
-                System.out.println("No YAML configuration files found in the directory path ./config");
+                LOG.info("No YAML configuration files found in the directory path ./config");
             }
         } catch (FileNotFoundException e) {
-            LOG.error("File not found: " + file.getName());
+            LOG.error("File not found: " + e);
         } catch (Exception e) {
-            LOG.error("Error reading YAML file: " + file.getName());
+            LOG.error("Error reading YAML file: " + e);
             e.printStackTrace();
         }
     }
 
-    public static String updateSshSsl(String key, String data) throws Exception {
+    public static String updateSshSsl(String key, String base64String) throws Exception {
         try {
-            return decryptConf(data.getBytes());
+            return decryptConf(Base64.getDecoder().decode(base64String));
         } catch (Exception e) {
-            reCoverConfig(key, encryptConf(data));
-            return data;
+            reCoverConfig(key, encryptConf(base64String.getBytes()));
+            return base64String;
         }
     }
 
@@ -81,36 +79,36 @@ public class GetConfig implements Serializable {
             options.setDefaultFlowStyle(DumperOptions.FlowStyle.BLOCK);
             Yaml yaml = new Yaml(options);
             yaml.dump(data, writer);
-            System.out.println("YAML configuration written successfully.");
+            LOG.info("YAML configuration written successfully.");
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-    private static String byteArrayToString(byte[] byteArray) {
-        StringBuilder sb = new StringBuilder();
-        for (byte b : byteArray) {
-            sb.append(b).append(" ");
-        }
-        return sb.toString();
-    }
-    public static byte[] reCoverConfig(String keyName, byte[] config) {
+
+    /**
+     * cover the SSH/SSL config
+     * @param keyName SSH/SSl key name
+     * @param encrypt  encrypt data
+     * @return
+     */
+    public static byte[] reCoverConfig(String keyName, byte[] encrypt) {
         try {
             String yamlFilePath = System.getProperty("user.dir") + "/config/hdfsConf.yaml";
             FileReader reader = new FileReader(yamlFilePath);
             Yaml yaml = new Yaml();
             Map<String, Object> yamlConfig = yaml.load(reader);
             Map<String, Object> sshSslConfig = (Map<String, Object>) yamlConfig.get("ssh_ssl");
-            sshSslConfig.put(keyName, byteArrayToString(config));
+            sshSslConfig.put(keyName, Base64.getEncoder().encodeToString(encrypt));
             FileWriter writer = new FileWriter(yamlFilePath);
             yaml.dump(yamlConfig, writer);
             writeYamlFile(yamlConfig, yamlFilePath);
             reader.close();
             writer.close();
-            System.out.println("YAML configuration file updated successfully.");
+            LOG.info("YAML configuration file updated successfully.");
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return config;
+        return encrypt;
     }
 
     public static void main(String[] args) {
