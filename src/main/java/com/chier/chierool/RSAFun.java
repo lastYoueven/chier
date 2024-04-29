@@ -10,6 +10,9 @@ public class RSAFun {
     static PublicKey publicKey = null;
     static PrivateKey privateKey = null;
 
+    /**
+     * initial public key & private key
+     */
     static {
         try (ObjectInputStream publicKeyIS = new ObjectInputStream(new FileInputStream(PUBLIC_KEY_FILE));
              ObjectInputStream privateKeyIS = new ObjectInputStream(new FileInputStream(PRIVATE_KEY_FILE))) {
@@ -28,6 +31,13 @@ public class RSAFun {
         }
     }
 
+    /**
+     * gen the publicKey & privateKey
+     *
+     * @throws NoSuchAlgorithmException
+     * @throws IOException
+     * @throws InterruptedException
+     */
     private static void generateKeys() throws NoSuchAlgorithmException, IOException, InterruptedException {
         KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
         keyPairGenerator.initialize(1024);
@@ -37,19 +47,29 @@ public class RSAFun {
         try (ObjectOutputStream publicKeyOS = new ObjectOutputStream(new FileOutputStream(PUBLIC_KEY_FILE));
              ObjectOutputStream privateKeyOS = new ObjectOutputStream(new FileOutputStream(PRIVATE_KEY_FILE))) {
 
-//            publicKeyOS.writeObject(keyPair.getPublic().getEncoded());
-//            privateKeyOS.writeObject(keyPair.getPrivate().getEncoded());
             publicKeyOS.writeObject(keyPair.getPublic());
             privateKeyOS.writeObject(keyPair.getPrivate());
         }
     }
 
+    /**
+     * rsa 1024 Encrypt
+     * @param message to encrypt
+     * @return encrypt data
+     * @throws Exception
+     */
     public static byte[] encryptConf(byte[] message) throws Exception {
         Cipher cipher = Cipher.getInstance("RSA");
         cipher.init(Cipher.ENCRYPT_MODE, publicKey);
         return cipher.doFinal(message);
     }
 
+    /**
+     * rsa 1024 decrypt
+     * @param encrypted
+     * @return decrypt data
+     * @throws Exception
+     */
     public static String decryptConf(byte[] encrypted) throws Exception {
         Cipher cipher = Cipher.getInstance("RSA");
         cipher.init(Cipher.DECRYPT_MODE, privateKey);

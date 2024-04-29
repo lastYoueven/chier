@@ -4,9 +4,22 @@ package com.chier.chierool;
  * @author lmdm
  * protive the SSH SSL conntion
  */
-public class SshSslCon {
+public class SSHExecutor extends GetConfig {
+    static {
 
-    public void conntionJsch(){
+    }
+    /**
+     * close channel
+     */
+    public void closePip(){
+
+    }
+
+    /**
+     * open channel
+     */
+    public void openPip(){
+
 //        JSch jsch = new JSch();
 //
 //        // 建立SSH连接

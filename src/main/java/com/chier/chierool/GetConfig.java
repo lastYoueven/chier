@@ -19,19 +19,16 @@ public class GetConfig extends ReCoverConf implements Serializable {
     private static final Logger LOG = LoggerFactory.getLogger(GetConfig.class);
     private static BaseConfig HdfsConfig = null;
 
-    /**
-     * init the config of hive
-     */
-    private static void GetConfig() {
+    static {
         try {
             String confPath = System.getProperty("user.dir") + "/config/";
             File directory = new File(confPath);
             File[] files = directory.listFiles((dir, name) -> name.toLowerCase().endsWith(".yaml"));
+            Yaml yaml = new Yaml();
             if (files != null) {
                 for (File file : files) {
                     LOG.info("get config files : " + file.getName());
                     InputStream inputStream = new FileInputStream(file);
-                    Yaml yaml = new Yaml();
                     Map<String, Object> confInfo = yaml.load(inputStream);
                     if (file.getName().startsWith("hdfsConf")) {
                         initSshSsl(confInfo);
@@ -49,6 +46,14 @@ public class GetConfig extends ReCoverConf implements Serializable {
         }
     }
 
+    /**
+     * get the ssh/ssl info if encrypt to decrypt else cover and return
+     *
+     * @param key          base key name
+     * @param base64String to check info
+     * @return
+     * @throws Exception
+     */
     public static String updateSshSsl(String key, String base64String) throws Exception {
         try {
             return decryptConf(Base64.getDecoder().decode(base64String));
@@ -87,8 +92,9 @@ public class GetConfig extends ReCoverConf implements Serializable {
 
     /**
      * cover the SSH/SSL config
+     *
      * @param keyName SSH/SSl key name
-     * @param encrypt  encrypt data
+     * @param encrypt encrypt data
      * @return
      */
     public static byte[] reCoverConfig(String keyName, byte[] encrypt) {
@@ -111,9 +117,10 @@ public class GetConfig extends ReCoverConf implements Serializable {
         return encrypt;
     }
 
+
     public static void main(String[] args) {
         // test
-        GetConfig();
+        GetConfig gc = new GetConfig();
     }
 
 }
