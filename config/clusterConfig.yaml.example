@@ -1,0 +1,47 @@
+# SSH Configuration
+ssh_ssl:
+  # SSH host address
+  host:
+  # SSH username
+  name:
+  # SSH password
+  pwd:
+
+# Hadoop Configuration
+hadoop:
+  # Hive URL
+  hive_url:
+  # Hadoop URL
+  url:
+  # Hadoop username
+  name:
+  # Hadoop password
+  pwd:
+  # NameNode address
+  nameNode:
+  # NodeManager address
+  nodeManager:
+  # Hive metastore warehouse directory
+  hive.metastore.warehouse.dir:
+
+# OceanBase Configuration
+oceanbase:
+  # OceanBase URL
+  url:
+  # OceanBase username
+  name:
+  # OceanBase password
+  pwd:
+
+# MySQL Configuration
+mysql:
+  # MySQL IP address
+  ip:
+  # MySQL username
+  name:
+  # MySQL password
+  pwd:
+
+# Cluster Nodes Configuration
+cluster_nodes:
+  nodes:

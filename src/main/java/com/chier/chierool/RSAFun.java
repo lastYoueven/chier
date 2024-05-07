@@ -21,11 +21,7 @@ public class RSAFun {
         } catch (Exception e) {
             try {
                 generateKeys();
-            } catch (NoSuchAlgorithmException ex) {
-                throw new RuntimeException(ex);
-            } catch (IOException ex) {
-                throw new RuntimeException(ex);
-            } catch (InterruptedException ex) {
+            } catch (NoSuchAlgorithmException | IOException | InterruptedException ex) {
                 throw new RuntimeException(ex);
             }
         }
@@ -46,7 +42,6 @@ public class RSAFun {
         privateKey = keyPair.getPrivate();
         try (ObjectOutputStream publicKeyOS = new ObjectOutputStream(new FileOutputStream(PUBLIC_KEY_FILE));
              ObjectOutputStream privateKeyOS = new ObjectOutputStream(new FileOutputStream(PRIVATE_KEY_FILE))) {
-
             publicKeyOS.writeObject(keyPair.getPublic());
             privateKeyOS.writeObject(keyPair.getPrivate());
         }
